@@ -12,13 +12,13 @@ test("Sets id via constructor arg", () => {
     expect(e.id).toBe(id);
   });
 
-test("Can get email via getEmail()", () => {
+test(`Function "getEmail" returns "test@test.com"`, () => {
     const email = "test@test.com";
     const e = new Employee("Foo", 1, email);
     expect(e.getEmail()).toBe(email);
   });
   
-test("getRole() should return \"Employee\"", () => {
+test(`Function "getRole" should return "Employee"`, () => {
     const role = "Employee";
     const e = new Employee("Alice", 1, "test@test.com");
     expect(e.getRole()).toBe(role);
