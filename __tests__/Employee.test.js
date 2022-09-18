@@ -1,9 +1,25 @@
-class Employee{
-    constructor(name, id, email) {
-        this.name = name;
-        this.id = id;
-        this.email = email;
-    }
+const Employee = require('../lib/Employee');
 
-    // functions to return values
-}
+test("Sets name via constructor arg", () => {
+    const name = "Austin";
+    const e = new Employee(name);
+    expect(e.name).toBe(name);
+  });
+
+test("Sets id via constructor arg", () => {
+    const id = 421;
+    const e = new Employee("Nobody", id);
+    expect(e.id).toBe(id);
+  });
+
+test("Can get email via getEmail()", () => {
+    const email = "test@test.com";
+    const e = new Employee("Foo", 1, email);
+    expect(e.getEmail()).toBe(email);
+  });
+  
+test("getRole() should return \"Employee\"", () => {
+    const role = "Employee";
+    const e = new Employee("Alice", 1, "test@test.com");
+    expect(e.getRole()).toBe(role);
+  });
